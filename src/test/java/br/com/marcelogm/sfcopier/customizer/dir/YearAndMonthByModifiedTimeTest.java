@@ -3,6 +3,7 @@ package br.com.marcelogm.sfcopier.customizer.dir;
 import com.google.common.jimfs.Jimfs;
 import org.junit.Test;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.FileSystem;
 import java.nio.file.Files;
@@ -23,8 +24,8 @@ public class YearAndMonthByModifiedTimeTest {
 
         String subpath = new YearAndMonthByModifiedTime().apply(file);
 
-        assertThat(subpath, is(now.getYear() + "\\" +
+        assertThat(subpath, is(now.getYear() + File.separator +
                 now.getMonth().getValue() + " - " +
-                now.getMonth().toString().toLowerCase() + "\\"));
+                now.getMonth().toString().toLowerCase() + File.separator));
     }
 }

@@ -7,9 +7,12 @@ import br.com.marcelogm.sfcopier.customizer.filter.FileFilter;
 import lombok.RequiredArgsConstructor;
 
 import javax.inject.Inject;
+import java.io.File;
 import java.nio.file.Path;
 import java.util.List;
 import java.util.function.Function;
+
+import static java.nio.file.Path.of;
 
 @RequiredArgsConstructor(onConstructor = @__(@Inject))
 public class FileHandlerService {
@@ -50,7 +53,7 @@ public class FileHandlerService {
     }
 
     private Path getOutput(FileToOrder file, Path destination, Function<Path, String> getSubpath) {
-        return Path.of(destination + "\\" + getSubpath.apply(file.getPath()));
+        return of(destination + File.separator + getSubpath.apply(file.getPath()));
     }
 
 }
