@@ -1,4 +1,5 @@
 # Gradle
+
 # Build your Java project and run tests with Gradle using a Gradle wrapper script.
 # Add steps that analyze code, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/java
@@ -10,7 +11,7 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- task: Gradle@2
+- task: Gradle@1
   inputs:
     workingDirectory: ''
     gradleWrapperFile: 'gradlew'
@@ -20,4 +21,12 @@ steps:
     jdkArchitectureOption: 'x64'
     publishJUnitResults: true
     testResultsFiles: '**/TEST-*.xml'
-    tasks: 'build test'
+    tasks: 'clean build test'
+
+- task: PublishCodeCoverageResults@1
+  inputs:
+    codeCoverageTool: 'JaCoCo'
+    summaryFileLocation: '$(System.DefaultWorkingDirectory)/sfcopier/**/reports/jacoco/test/jacocoTestReport.xml'
+    pathToSources: '$(System.DefaultWorkingDirectory)/sfcopier/src/main/java/'
+    reportDirectory: '${System.DefaultWorkingDirectory}/sfcopier/**/reports/jacoco/test/html'
+    failIfCoverageEmpty: true

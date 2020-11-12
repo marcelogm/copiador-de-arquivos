@@ -1,6 +1,7 @@
 plugins {
     id 'java'
     id 'maven-publish'
+    id 'jacoco'
 }
 
 group 'br.com.marcelogm'
@@ -30,3 +31,20 @@ publishing {
         }
     }
 }
+
+jacoco {
+    toolVersion = '0.8.5'
+}
+
+test {
+    finalizedBy jacocoTestReport
+}
+
+jacocoTestReport {
+    dependsOn test
+    reports {
+        html.enabled true
+        xml.enabled true
+    }
+}
+
