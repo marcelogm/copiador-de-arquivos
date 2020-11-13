@@ -4,7 +4,7 @@ plugins {
 }
 
 group 'br.com.marcelogm'
-version 'v0.1.0'
+version 'v0.1.1'
 
 repositories {
     mavenCentral()
