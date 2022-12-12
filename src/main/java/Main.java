@@ -1,5 +1,6 @@
 import com.google.inject.Guice;
 import com.google.inject.Injector;
+import customizer.dir.YearAndMonthByModifiedTime;
 import guice.BasicModule;
 import service.FileHandlerService;
 
@@ -18,6 +19,6 @@ public class Main {
         System.out.println("Digite o path de destino:");
         String destinationPath = scanner.nextLine();
 
-        i.getInstance(FileHandlerService.class).copy(of(basePath), of(destinationPath));
+        i.getInstance(FileHandlerService.class).copy(of(basePath), of(destinationPath), new YearAndMonthByModifiedTime());
     }
 }

@@ -1,6 +1,0 @@
-service/FileWalkerTest.java
- service.FileWalkerTest
-converter/PathToPhotoTest.java
- converter.PathToPhotoTest
-service/PhotoHolderTest.java
- service.PhotoHolderTest

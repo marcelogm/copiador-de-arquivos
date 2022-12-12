@@ -10,15 +10,15 @@ repositories {
 }
 
 dependencies {
-    implementation 'com.google.inject:guice:4.2.3'
+    implementation 'com.google.inject:guice:5.1.0'
     implementation 'org.apache.logging.log4j:log4j-core:2.13.3'
     implementation 'org.mockito:mockito-core:2.22.0'
 
-    compileOnly 'org.projectlombok:lombok:1.18.16'
-    annotationProcessor 'org.projectlombok:lombok:1.18.16'
+    compileOnly 'org.projectlombok:lombok:1.18.24'
+    annotationProcessor 'org.projectlombok:lombok:1.18.24'
 
     testImplementation 'junit:junit:4.12'
     testImplementation 'com.google.jimfs:jimfs:1.1'
-    runtimeOnly 'org.projectlombok:lombok:1.18.16'
-    testAnnotationProcessor 'org.projectlombok:lombok:1.18.16'
+    testCompileOnly 'org.projectlombok:lombok:1.18.24'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.24'
 }
