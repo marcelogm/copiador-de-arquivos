@@ -12,6 +12,6 @@
         <module name="copiador-de-arquivos.main" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="11" />
+    <bytecodeTargetLevel target="16" />
   </component>
 </project>
